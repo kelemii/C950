@@ -1,7 +1,6 @@
 # Driver Implementation for WGUPS Routing Program
 # Author: 001323392
 
-#
 class Driver:
     def __init__(self, driver_id):
         """

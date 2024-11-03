@@ -3,7 +3,6 @@
 import time
 from settings import hub, pause_event
 
-
 class Truck:
     def __init__(self, truck_id, clock, capacity=16, speed=18):
         """
@@ -34,9 +33,6 @@ class Truck:
             return True
         return False
 
-
-
-
     def deliver_package_and_drive(self, package, distance):
         """
         Deliver a package and update the truck's current time and mileage.
@@ -45,6 +41,7 @@ class Truck:
         :param distance: The distance traveled to deliver the package.
         """
         if package:
+            time.sleep(.1) # slows down delivery so pause/update time is more accurate
             # Drive to the location and update truck status
             self.mileage += distance
             travel_time_minutes = (distance / self.speed) * 60
@@ -56,16 +53,10 @@ class Truck:
             package["timestamp"] = self.clock.get_current_time().strftime("%I:%M %p")
             print(f"Package {package_id} delivered at {package['timestamp']}")
 
-            # Remove the package from the truck
-            # self.packages.remove(package)
-
-
-
-
-
     def load_packages_onto_truck(truck, package_ids, hash_table):
         """
         Loads multiple packages onto the truck.
+
         :param truck: The truck instance.
         :param package_ids: List of package IDs to load.
         :param hash_table: The hash table containing package information.
@@ -80,9 +71,6 @@ class Truck:
                     print(f"Failed to load Package {package_id} onto Truck {truck.truck_id}.")
             else:
                 print(f"Package {package_id} not found in hash table.")
-
-
-
 
     def find_nearest_location(self, current_index, unvisited_indices, adjacency_matrix):
         """
@@ -103,11 +91,6 @@ class Truck:
                 nearest_index = index
 
         return nearest_index
-
-
-
-
-
 
     def deliver_packages_nearest_neighbor(self, adjacency_matrix, address_mapping, update_package_callback):
         """
@@ -146,7 +129,7 @@ class Truck:
             # Find the nearest location
             nearest_index = self.find_nearest_location(current_index, unvisited_indices, adjacency_matrix)
 
-            # Extract the distance as a scalar using float()
+            # Extract the distance, convert to float to prevent type errors
             distance_to_nearest = float(adjacency_matrix[current_index, nearest_index])
 
             # Deliver all packages at the nearest location and drive
@@ -166,14 +149,6 @@ class Truck:
         if self.driver:
             self.driver.remove_truck()
 
-
-
-
-
-
-
-
-
     def update_loaded_package(self, package_id, updated_info):
         """
         Update an existing package that is currently loaded on the truck.
@@ -190,14 +165,7 @@ class Truck:
         print(f"Package {package_id} not found on Truck {self.truck_id}.")
         return False
 
-
-
-
-
-
-
-
-    def view_current_packages_status(self): #this seems to work before the truck leaves the hub, but not after.
+    def view_current_packages_status(self):
         """
         Returns the status of all packages on this truck.
         """

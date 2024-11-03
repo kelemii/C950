@@ -3,6 +3,7 @@ from Clock import Clock
 from PackageHashTable import PackageHashTable
 
 # This file is for easily changing variables, and cleanliness
+
 clock = Clock()
 hub = "4001 South 700 East"
 pause_event = threading.Event()

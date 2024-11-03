@@ -4,7 +4,7 @@ import datetime
 
 class Clock:
     def __init__(self, start_time=None):
-        self.current_time = start_time if start_time else datetime.datetime.now().replace(hour=8, minute=0, second=0, microsecond=0)
+        self.current_time = start_time if start_time else datetime.datetime.now().replace(hour=8, minute=0, second=0, microsecond=0) # Start of the day
 
     def advance_time(self, minutes):
         self.current_time += datetime.timedelta(minutes=minutes)

@@ -44,8 +44,8 @@ driver2.receive_truck(truck2)
 truck1_thread = threading.Thread(target=truck1.deliver_packages_nearest_neighbor, args=(adjacency_matrix, address_mapping, update_package_in_hash_table))
 truck2_thread = threading.Thread(target=truck2.deliver_packages_nearest_neighbor, args=(adjacency_matrix, address_mapping, update_package_in_hash_table))
 truck3_thread = threading.Thread(target=truck3.deliver_packages_nearest_neighbor, args=(adjacency_matrix, address_mapping, update_package_in_hash_table))
-scheduled_update_thread = threading.Thread(target=schedule_package_update, args=(clock, hash_table, 9, new_address, scheduled_time))
-package_status_thread = threading.Thread(target=package_status_checker.package_status_checker, args=(clock, hash_table, truck_list, stop_time))
+scheduled_update_thread = threading.Thread(target=schedule_package_update, args=(clock, hash_table, 9, new_address))
+package_status_thread = threading.Thread(target=package_status_checker.package_status_checker, args=(clock, hash_table, truck_list))
 
 
 # Starting threads

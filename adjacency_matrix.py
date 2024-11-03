@@ -11,8 +11,3 @@ def load_addresses_and_distances(addresses_csv, distances_csv):
     distances_data = pd.read_csv(distances_csv, header=None)
     adjacency_matrix = distances_data.values
     return address_mapping, adjacency_matrix
-
-
-
-# Example usage:
-# adjacency_matrix, locations = load_adjacency_matrix('WGUPS_Distance_Table.csv')

@@ -1,26 +1,27 @@
-from settings import pause_event
+from settings import pause_event, stop_time
 
-def package_status_checker(clock, hash_table, truck_list, scheduled_time):
+
+def package_status_checker(clock, hash_table, truck_list):
     """
     Checks for time, and executes method for creating user interface when time is reached
     :param clock:
     :param hash_table:
     :param truck_list:
-    :param scheduled_time:
     :return:
     """
     truck1 = truck_list[0]
     truck2 = truck_list[1]
     truck3 = truck_list[2]
     while True:
-        # Continuously check the current time
+        # Check the current time
         current_time = clock.get_current_time()
-        if current_time >= scheduled_time:
+        if current_time >= stop_time:
+            # if time has been reached/passed pause truck threads
             print("Pausing Truck threads for status check")
             pause_event.set()
             user_interface(clock, hash_table, truck1, truck2, truck3)
             print("Resuming Truck threads")
-            pause_event.clear()
+            pause_event.clear() #stops event
             break
 
 def user_interface(clock, hash_table, truck1, truck2, truck3):
@@ -82,10 +83,6 @@ def user_interface(clock, hash_table, truck1, truck2, truck3):
         elif choice == "5":
             print("Exiting the interface.")
             break
-
-        # elif choice == "6":
-        #     print("Checking Time")
-        #     print(f"Current time: {clock.get_current_time()}")
 
         else:
             print("Invalid choice. Please try again.")

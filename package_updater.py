@@ -1,6 +1,9 @@
 import time
 
-def schedule_package_update(clock, hash_table, package_id, new_address, scheduled_time):
+from settings import scheduled_time
+
+
+def schedule_package_update(clock, hash_table, package_id, new_address):
     """
     Schedule a package address update for a specified time.
 
@@ -8,10 +11,9 @@ def schedule_package_update(clock, hash_table, package_id, new_address, schedule
     :param hash_table: The hash table containing package information.
     :param package_id: The ID of the package to update.
     :param new_address: The new address to set.
-    :param scheduled_time: The time at which to update the package.
     """
     while True:
-        # Continuously check the current time
+        # Check the current time
         current_time = clock.get_current_time()
         if current_time >= scheduled_time:
             # If the scheduled time has been reached, update the package

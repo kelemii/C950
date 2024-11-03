@@ -12,6 +12,8 @@ class PackageHashTable:
     def _hash(self, key):
         """
         Hash function to determine the index for a given key.
+
+        :param key: The key to hash.
         """
         return key % self.capacity
 
@@ -43,7 +45,7 @@ class PackageHashTable:
                     "notes": notes
                 })
                 return
-        # If not found, insert as a new entry
+        # If it doesn't already exist, insert as a new entry
         self.table[index].append({
             "package_id": package_id,
             "address": address,
