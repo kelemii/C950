@@ -21,6 +21,7 @@ Screenshot 3
 E.  Provide screenshots showing successful completion of the code that includes the total mileage traveled by all trucks.
 Screenshot 4
 
+Complete
 F.  Justify the package delivery algorithm used in the solution as written in the original program by doing the following:
 1.  Describe two or more strengths of the algorithm used in the solution.
 Simplicity and efficiency - The nearest neighbor algorithm is pretty easy to understand and implement, it always goes to the nearest destination that has not been visited yet.
@@ -37,12 +38,13 @@ a.  Describe how both algorithms identified in part F3 are different from the al
 Nearest insertion builds out an entire route for the packages before the truck would leave the hub, and this would likely allow for a shorter overall trip.
 Similar to nearest insertion, A Star plans for the entire route, it looks for the shortest possible path considering all of the data it is provided.
 
+Complete
 G.  Describe what you would do differently, other than the two algorithms identified in part F3, if you did this project again, including details of the modifications that would be made.
 If I were to do this project again, I would attempt automating what packages go on which trucks, and optimize for clusters of packages. I think even with my current algorithm that would significantly decrease overall mileage.
 The way I have it currently set up is mostly random, aside from what packages specifically need to be together/delivered at certain times, so I would attempt to make use of my algorithm to determine what groups of packages are in the smallest clusters,
 and then assign accordingly.
 
-
+Complete
 H.  Verify that the data structure used in the solution meets all requirements in the scenario.
 1.  Identify two other data structures that could meet the same requirements in the scenario.
 A self balancing binary search tree would be a good solution
