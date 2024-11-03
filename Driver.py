@@ -4,7 +4,7 @@
 class Driver:
     def __init__(self, driver_id):
         """
-        Initalizes a driver for a truck
+        Initializes a driver for a truck
         :param driver_id:
         """
         self.driver_id = driver_id
