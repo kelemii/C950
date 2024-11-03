@@ -47,7 +47,6 @@ truck3_thread = threading.Thread(target=truck3.deliver_packages_nearest_neighbor
 scheduled_update_thread = threading.Thread(target=schedule_package_update, args=(clock, hash_table, 9, new_address))
 package_status_thread = threading.Thread(target=package_status_checker.package_status_checker, args=(clock, hash_table, truck_list))
 
-
 # Starting threads
 truck1_thread.start()
 truck2_thread.start()

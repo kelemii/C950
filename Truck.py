@@ -172,9 +172,7 @@ class Truck:
         status_list = []
         for package in self.packages:
             status_list.append(
-                f"=======================\n"
-                f"Package ID: {package['package_id']}, Status: {package['status']}, Timestamp: {package.get('timestamp', 'N/A')}\n"
-                f"=======================\n")
+                f"Package ID: {package['package_id']}, Status: {package['status']}, Timestamp: {package.get('timestamp', 'N/A')}\n")
 
         return status_list
 
