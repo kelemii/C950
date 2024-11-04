@@ -7,8 +7,7 @@ from adjacency_matrix import load_addresses_and_distances
 from package_updater import schedule_package_update
 from Driver import Driver
 import package_status_checker
-from settings import hash_table, csv_file_path, addresses_csv, distances_csv, clock, new_address, scheduled_time, \
-    stop_time
+from settings import hash_table, csv_file_path, addresses_csv, distances_csv, clock, new_address
 
 def update_package_in_hash_table(package_id, updated_package):
     hash_table.update(package_id, updated_package)

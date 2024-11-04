@@ -85,7 +85,7 @@ class Truck:
         shortest_distance = float('inf')
 
         for index in unvisited_indices:
-            distance = adjacency_matrix[current_index, index]
+            distance = float(adjacency_matrix[current_index][index])
             if distance < shortest_distance:
                 shortest_distance = distance
                 nearest_index = index
@@ -130,7 +130,7 @@ class Truck:
             nearest_index = self.find_nearest_location(current_index, unvisited_indices, adjacency_matrix)
 
             # Extract the distance, convert to float to prevent type errors
-            distance_to_nearest = float(adjacency_matrix[current_index, nearest_index])
+            distance_to_nearest = float(adjacency_matrix[current_index][nearest_index])
 
             # Deliver all packages at the nearest location and drive
             for package in list(self.packages):  # Iterate over a copy to modify the list

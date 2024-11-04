@@ -93,7 +93,7 @@ and then assign accordingly.**
 H.  Verify that the data structure used in the solution meets all requirements in the scenario.
 1.  Identify two other data structures that could meet the same requirements in the scenario.
 
-**A self balancing binary search tree would be a good solution
+**A self-balancing binary search tree would be a good solution
 A Graph data structure could also be great for this application.**
 a.  Describe how each data structure identified in H1 is different from the data structure used in the solution.
 
