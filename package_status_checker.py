@@ -1,9 +1,10 @@
-from settings import pause_event, stop_time
+from settings import pause_event
 
 
-def package_status_checker(clock, hash_table, truck_list):
+def package_status_checker(clock, hash_table, truck_list, stop_time):
     """
     Checks for time, and executes method for creating user interface when time is reached
+    :param stop_time:
     :param clock:
     :param hash_table:
     :param truck_list:

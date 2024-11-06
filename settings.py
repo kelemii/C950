@@ -15,7 +15,7 @@ scheduled_time = clock.get_current_time().replace(hour=10, minute=20)
 new_address = "410 S. State St., Salt Lake City, UT 84111"
 updated_package_info = hash_table.lookup(9)
 
-stop_time = clock.get_current_time().replace(hour=12, minute=3)  # UPDATE THIS TO CHANGE WHEN PAUSE HAPPENS
+# stop_time = clock.get_current_time().replace(hour=12, minute=3)  # UPDATE THIS TO CHANGE WHEN PAUSE HAPPENS
 
 
 

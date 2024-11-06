@@ -26,6 +26,12 @@ truck_list = [truck1, truck2, truck3]
 driver1 = Driver(1)
 driver2 = Driver(2)
 
+# ask user to input stop time
+pause_time_input = input("Enter the time to pause for status checking (HH:MM format, 24-hour clock): ")
+pause_hour, pause_minute = map(int, pause_time_input.split(':'))
+stop_time = clock.get_current_time().replace(hour=pause_hour, minute=pause_minute, second=0, microsecond=0)
+
+
 # Loading packages onto the trucks
 truck1_package_ids = [1, 6, 13, 14, 15, 16, 20, 29, 30, 2, 4, 7] # 12 packages
 truck2_package_ids = [3, 18, 25, 34, 36, 37, 38, 40, 10, 11, 12, 17] # 12 packages
@@ -44,7 +50,7 @@ truck1_thread = threading.Thread(target=truck1.deliver_packages_nearest_neighbor
 truck2_thread = threading.Thread(target=truck2.deliver_packages_nearest_neighbor, args=(adjacency_matrix, address_mapping, update_package_in_hash_table))
 truck3_thread = threading.Thread(target=truck3.deliver_packages_nearest_neighbor, args=(adjacency_matrix, address_mapping, update_package_in_hash_table))
 scheduled_update_thread = threading.Thread(target=schedule_package_update, args=(clock, hash_table, 9, new_address))
-package_status_thread = threading.Thread(target=package_status_checker.package_status_checker, args=(clock, hash_table, truck_list))
+package_status_thread = threading.Thread(target=package_status_checker.package_status_checker, args=(clock, hash_table, truck_list, stop_time))
 
 # Starting threads
 truck1_thread.start()
